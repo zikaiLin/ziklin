@@ -4,8 +4,10 @@ date: 2021-01-02T15:34:30-04:00
 categories:
   - blog
 tags:
-  - Jekyll
-  - update
+  - R
+  - Plotly
+  - heatmap
+  - visualization
 ---
 
 
