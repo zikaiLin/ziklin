@@ -24,6 +24,7 @@ github_username: "zikaiLin"
 minimal_mistakes_skin: "default"
 search: true
 google_site_verification: "izsN8y9uFg-4XIZ4eV4I_7CyzL8U-4VPgPG2zArKI_g"
+url: "https://https://zikailin.github.io/ziklin/" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown
@@ -58,6 +59,7 @@ plugins:
   - jekyll-feed
   - jemoji
   - jekyll-include-cache
+  - jekyll-sitemap
 
 author:
   name   : "Zikai Lin"
