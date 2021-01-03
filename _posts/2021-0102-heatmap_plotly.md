@@ -1,3 +1,14 @@
+---
+title: "Heatmap using R Plotly (Colorscale, borders and subplot)"
+date: 2021-01-02T15:34:30-04:00
+categories:
+  - blog
+tags:
+  - Jekyll
+  - update
+---
+
+
 Basics
 ------
 
