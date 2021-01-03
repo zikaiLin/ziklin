@@ -15,7 +15,7 @@ tags:
 
 ## Basics
 
-In **plotly**, the heatmap is plotted by using the **plot_ly** function. You can specify the type of plot as **heatmap**.
+In **plotly**, the heatmap can be plotted by the **plot_ly** function. You can specify the type of plot as **heatmap**.
 
 ```r
 library(plotly)
@@ -26,10 +26,10 @@ fig
 
 ![Basic heatmap in plotly](/ziklin/assets/images/2020-01-02-heatmap/fig1.png)
 
-Plotly will create a beautiful interactive heatmap plot for you. However, this is just a toy example, sometimes you need to specify some options to make your heatmap plot cleaner and more publishable.
+Now plotly creates a beautiful interactive heatmap visualization for you. However, this is just a simple example without further customization. Sometimes, you might need to specify optional arguments to make your heatmap visualization cleaner and more publishable.
 
 ## Colors
-First let's start with the color scale. The default color scale in plotly is the **Viridis** style. However, you can either specify a color scheme using the name listed in <https://colorbrewer2.org>. Here are some available color scheme you can directly specify in plotly:
+First let's start with the color scale. The default color scale in plotly is the **Viridis** style. But you can either specify a color scheme using the name listed in <https://colorbrewer2.org>, or a customized colorscale in R. Here are some available color schemes that you can directly use in plotly:
 
 ### Continuous color scale
 
@@ -57,7 +57,7 @@ Single hue colorscale:
 - Purples (**Purples**)
 - Reds (**Reds**)
 
-Example - Blues
+***Example*** - Blues
 
 ```r
 library(plotly)
@@ -71,7 +71,7 @@ fig
 
 ### Diverging colorscale
 
-Diverging colorscale is useful when you want to show the "sign" in your dataset, e.g. negative-positive. Some existing diverging colorscale available in plotly are
+Diverging colorscales are often useful when you want to visualize the "sign" in your dataset, e.g. negative-positive. Some existing diverging colorscales available in plotly are as follow:
 
 - Brown-Bright-Green (**BrBG**)
 - Pink-Yellow-Green (**PiYG**)
@@ -83,7 +83,7 @@ Diverging colorscale is useful when you want to show the "sign" in your dataset,
 - Red-Yellow-Green (**RdYlGn**)
 - Spectral (**Spectral**)
 
-Example - use red-blue color scale to display your heatmap. But a reverse scale, which is Blue-Red colorscheme are more often used, so you might want to specify **reversescale**
+***Example*** - the red-blue color scale to display your heatmap. But a reverse scale, which is Blue-Red colorscheme are more often used, so you might want to specify **reversescale = TRUE**
 
 ```r
 library(plotly)
@@ -114,7 +114,9 @@ For more details, please take a look at <https://colorbrewer2.org/#type=qualitat
 
 ## Scale
 
-Sometimes users will found themselves in such pain when they are trying to adjust the range of colorscale, because it is not documented in the official website. For instance, in the volcano data, the temperature is usually considered to be greater than 0F, therefore, it will be misleading if we plot it in blue. Fortunately, it is possible to adjust the range of your colorscale by specifying two arguments in plot_ly function.
+Sometimes users might found themselves in such pain when they try to adjust the range of colorscale in plotly, because it is not well-documented on the official website. For instance, in the volcano dataset, the temperature is usually considered to be greater than 0F. Therefore, it will be misleading if we plot it in blue color when temperature is greater than 0. 
+
+Fortunately, it is possible to adjust the range of your colorscale by specifying two arguments in plot_ly function.
 
 - **zauto**: if you specify this option to FALSE, then plotly won't automatically adjust the colorscale in your heatmap.
 - **zmax**: the upper bound of your colorscale.
