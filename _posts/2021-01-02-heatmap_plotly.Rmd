@@ -1,0 +1,163 @@
+---
+title: "Heatmap using R Plotly (Colorscale, borders and subplot)"
+author: "Zikai Lin"
+date: "1/2/2021"
+output:
+  html_document:
+    keep_md: true
+always_allow_html: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(plotly)
+```
+
+## Basics
+
+In **plotly**, the heatmap is plotted using the basics **plot_ly** function and specify the type of plot as **heatmap**.
+```{r}
+library(plotly)
+fig <- plot_ly(z = volcano, type = "heatmap")
+
+fig
+```
+Plotly will create a beautiful interactive heatmap plot for you. However, this is just a toy example, sometimes you need to specify some options to make your heatmap plot cleaner and more publishable.
+
+## Colors
+First let's start with the color scale. The default color scale in plotly is the **Viridis** style. However, you can either specify a color scheme using the name listed in <https://colorbrewer2.org>. Here are some available color scheme you can directly specify in plotly:
+
+### Continuous color scale
+
+Multi-hue colorscale:
+
+- Blue-Green colorscale (**BuGn**)
+- Blue-Purple colorscale (**BuPu**)
+- Green-Blue colorscale (**GnBu**)
+- Orange-Red colorscale (**OrRd**)
+- Purple-Blue colorscale (**PuBu**)
+- Purple-Blue-Green colorscale (**PuBuGn**)
+- Purple-Red colorscale (**PuRd**)
+- Red-Purple colorscale (**RdPu**)
+- Yellow-Green colorscale (**YlGn**)
+- Yellow-Green-Blue colorscale (**YlGnBu**)
+- Yellow-Orange-Bright colorscale (**YlOrBr**)
+- Yellow-Orange-Red colorscale (**YlOrRd**)
+
+Single hue colorscale:
+
+- Blues (**Blues**)
+- Greens (**Greens**)
+- Greys (**Greys**)
+- Oranges (**Oranges**)
+- Purples (**Purples**)
+- Reds (**Reds**)
+
+Example - Blues
+```{r}
+library(plotly)
+fig <- plot_ly(z = volcano, type = "heatmap", colors = "Blues")
+fig
+```
+
+### Diverging colorscale
+
+Diverging colorscale is useful when you want to show the "sign" in your dataset, e.g. negative-positive. Some existing diverging colorscale available in plotly are
+
+- Brown-Bright-Green (**BrBG**)
+- Pink-Yellow-Green (**PiYG**)
+- Purple-Green (**PRGn**)
+- Purple-Orange (**PuOr**)
+- Red-Blue (**RdBu**)
+- Red-Grey (**RdGy**)
+- Red-Yellow-Blue (**RdYlBu**)
+- Red-Yellow-Green (**RdYlGn**)
+- Spectral (**Spectral**)
+
+Example - use red-blue color scale to display your heatmap. But a reverse scale, which is Blue-Red colorscheme are more often used, so you might want to specify **reversescale**
+```{r}
+library(plotly)
+fig <- plot_ly(z = volcano, type = "heatmap", colors = "RdBu", reversescale =T)
+fig
+```
+
+### Qualitative colorscale
+
+Qualitative is useful when you want to disply categorical data. The available qualitative colorscales in plotly are:
+
+- Accent
+- Dark2
+- Paired
+- Pastel1
+- Pastel2
+- Set1
+- Set2
+- Set3
+
+For more details, please take a look at <https://colorbrewer2.org/#type=qualitative&scheme=Set1&n=3>.
+
+
+## Scale
+
+Sometimes users will found themselves in such pain when they are trying to adjust the range of colorscale, because it is not documented in the official website. For instance, in the volcano data, the temperature is usually considered to be greater than 0F, therefore, it will be misleading if we plot it in blue. Fortunately, it is possible to adjust the range of your colorscale by specifying two arguments in plot_ly function.
+
+- **zauto**: if you specify this option to FALSE, then plotly won't automatically adjust the colorscale in your heatmap.
+- **zmax**: the upper bound of your colorscale.
+- **zmim**: the lower bound of your colorscale.
+
+```{r}
+# Expanding the range of the colorscale
+fig <- plot_ly(z = volcano, type = "heatmap", colors = "RdBu", reversescale =T, zauto = FALSE, zmax = 200, zmin = 0)
+fig
+```
+
+
+## Borders and axis
+
+Sometimes, it will be useful to add a border to your heatmap, especially when the boundary is not clear. A way to do it is to configure and customize the axis. Here's an example of how to add borders to your heatmap:
+
+```{r}
+ax <- list(
+  zeroline = TRUE,
+  showline = TRUE,
+  mirror = "ticks",
+  gridcolor = toRGB("gray50"),
+  gridwidth = 2,
+  zerolinecolor = toRGB("red"),
+  zerolinewidth = 4,
+  linecolor = toRGB("black"),
+  linewidth = 6,
+  titlefont=list(
+  family = "Roman",
+  size = 25
+  )
+)
+
+ay <- list(
+  zeroline = TRUE,
+  showline = TRUE,
+  mirror = "ticks",
+  gridcolor = toRGB("gray50"),
+  gridwidth = 2,
+  zerolinecolor = toRGB("red"),
+  zerolinewidth = 4,
+  linecolor = toRGB("black"),
+  linewidth = 6
+)
+
+fig <- plot_ly(z = volcano, type = "heatmap", colors = "RdBu", reversescale =T, zauto = FALSE, zmax = 200, zmin = 0) %>%
+  layout(xaxis = ax, yaxis = ay)
+fig
+```
+
+
+
+## Subplot
+
+**subplot()** is a very handy function to gather plotly objects. 
+```{r}
+fig_rb <- plot_ly(z = volcano, type = "heatmap", colors = "RdBu", reversescale =T, zauto = FALSE, zmax = 200, zmin = 0)
+fig_gry <- plot_ly(z = volcano, type = "heatmap", colors = "Greys", reversescale =T, zauto = FALSE, zmax = 200, zmin = 0)
+fig_grn <- plot_ly(z = volcano, type = "heatmap", colors = "Greens", reversescale =T, zauto = FALSE, zmax = 200, zmin = 0)
+subplot(fig_rb, fig_gry, fig_grn)
+```
