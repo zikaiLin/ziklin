@@ -15,7 +15,7 @@ tags:
 
 ## Basics
 
-In **plotly**, the heatmap is plotted using the basics **plot_ly** function and specify the type of plot as **heatmap**.
+In **plotly**, the heatmap is plotted by using the **plot_ly** function. You can specify the type of plot as **heatmap**.
 
 ```r
 library(plotly)
@@ -87,7 +87,8 @@ Example - use red-blue color scale to display your heatmap. But a reverse scale,
 
 ```r
 library(plotly)
-fig <- plot_ly(z = volcano, type = "heatmap", colors = "RdBu", reversescale =T)
+fig <- plot_ly(z = volcano, type = "heatmap",
+               colors = "RdBu", reversescale =T)
 fig
 ```
 
@@ -122,7 +123,9 @@ Sometimes users will found themselves in such pain when they are trying to adjus
 
 ```r
 # Expanding the range of the colorscale
-fig <- plot_ly(z = volcano, type = "heatmap", colors = "RdBu", reversescale =T, zauto = FALSE, zmax = 200, zmin = 0)
+fig <- plot_ly(z = volcano, type = "heatmap",
+               colors = "RdBu", reversescale =T,
+               zauto = FALSE, zmax = 200, zmin = 0)
 fig
 ```
 
@@ -164,7 +167,9 @@ ay <- list(
   linewidth = 6
 )
 
-fig <- plot_ly(z = volcano, type = "heatmap", colors = "RdBu", reversescale =T, zauto = FALSE, zmax = 200, zmin = 0) %>%
+fig <- plot_ly(z = volcano, type = "heatmap",
+               colors = "RdBu", reversescale =T,
+               zauto = FALSE, zmax = 200, zmin = 0) %>%
   layout(xaxis = ax, yaxis = ay)
 fig
 ```
@@ -178,9 +183,15 @@ fig
 **subplot()** is a very handy function to gather plotly objects. 
 
 ```r
-fig_rb <- plot_ly(z = volcano, type = "heatmap", colors = "RdBu", reversescale =T, zauto = FALSE, zmax = 200, zmin = 0)
-fig_gry <- plot_ly(z = volcano, type = "heatmap", colors = "Greys", reversescale =T, zauto = FALSE, zmax = 200, zmin = 0)
-fig_grn <- plot_ly(z = volcano, type = "heatmap", colors = "Greens", reversescale =T, zauto = FALSE, zmax = 200, zmin = 0)
+fig_rb <- plot_ly(z = volcano, type = "heatmap",
+                  colors = "RdBu", reversescale =T,
+                  zauto = FALSE, zmax = 200, zmin = 0)
+fig_gry <- plot_ly(z = volcano, type = "heatmap",
+                   colors = "Greys", reversescale =T,
+                   zauto = FALSE, zmax = 200, zmin = 0)
+fig_grn <- plot_ly(z = volcano, type = "heatmap",
+                   colors = "Greens", reversescale =T,
+                   zauto = FALSE, zmax = 200, zmin = 0)
 subplot(fig_rb, fig_gry, fig_grn)
 ```
 
