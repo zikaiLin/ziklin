@@ -1,8 +1,8 @@
-# Accessing list object in Rcpp using RcppArmadillo.
+## Accessing list object in Rcpp using RcppArmadillo.
 
 
 
-## Create a list object in Rcpp
+### Create a list object in Rcpp
 
 In Rcpp, you can create a list of object by using `List::create()` function. The name of element can be created using either `Rcpp::Named()` or `_[]`.
 
@@ -16,7 +16,7 @@ List L = List::create(Named("name1") = v1 , _["name2"] = v2);
 
 
 
-## Accessing the elements in list
+### Accessing the elements in list
 
 You can easily access the element in a list by either using indices or character name.
 
