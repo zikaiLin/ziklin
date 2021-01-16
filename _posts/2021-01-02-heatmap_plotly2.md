@@ -2,6 +2,7 @@
 title: "Heatmap using R Plotly (Colorscale, borders and subplot)"
 author: "Zikai Lin"
 date: "1/2/2021"
+classes: wide
 categories:
   - blog
 tags:
