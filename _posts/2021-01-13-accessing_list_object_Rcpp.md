@@ -1,14 +1,12 @@
 ---
 title: "Accessing list object in Rcpp using RcppArmadillo"
 author: "Zikai Lin"
-date: "1/12/2021"
+date: 2021-01-12T15:34:30-04:00
 categories:
   - blog
 tags:
   - R
   - Rcpp
-
-
 ---
 
 
