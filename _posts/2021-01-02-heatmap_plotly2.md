@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "Heatmap using R Plotly (Colorscale, borders and subplot)"
 author: "Zikai Lin"
 date: "1/2/2021"

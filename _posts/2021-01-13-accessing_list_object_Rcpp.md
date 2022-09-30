@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "Accessing list object in Rcpp using RcppArmadillo"
 author: "Zikai Lin"
 date: 2021-01-12T15:34:30-04:00
