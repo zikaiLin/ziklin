@@ -12,7 +12,7 @@ title: Publications
 
 [Longitudinal white-matter abnormalities in sports-related concussion: A diffusion MRI study](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ZjPDfTcAAAAJ&citation_for_view=ZjPDfTcAAAAJ:2osOgNQ5qMEC)
 
-YC Wu, J Harezlak, NMH Elsaid, Z Lin, Q Wen, SM Mustafi, LD Riggen, \...
+Yu-Chien Wu, Jaroslaw Harezlak, Nahla MH Elsaid, Zikai Lin, Qiuting Wen, Sourajit M Mustafi, Larry D Riggen, Kevin M Koch, Andrew S Nencka, Timothy B Meier, Andrew R Mayer, Yang Wang, Christopher C Giza, John P DiFiori, Kevin M Guskiewicz, Jason P Mihalik, Stephen M LaConte, Stefan M Duma, Steven P Broglio, Andrew J Saykin, Michael A McCrea, Thomas W McAllister
 
 Neurology 95 (7), e781-e792 
 
