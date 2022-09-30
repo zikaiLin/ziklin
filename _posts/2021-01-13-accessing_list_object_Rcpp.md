@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Accessing list object in Rcpp"
+title: "R-Blog: Accessing list object in Rcpp"
 author: "Zikai Lin"
 date: 2021-01-12T15:34:30-04:00
 classes: wide
