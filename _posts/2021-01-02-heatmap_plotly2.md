@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Heatmap using R Plotly (Colorscale, borders and subplot)"
+title: "Heatmap using R Plotly"
 author: "Zikai Lin"
 date: "1/2/2021"
 classes: wide
