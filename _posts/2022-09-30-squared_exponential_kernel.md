@@ -2,6 +2,15 @@
 editor_options: 
   markdown: 
     wrap: 72
+layout: post
+title: "Modified Squared Exponential Kernel and Basis Expansion"
+author: "Zikai Lin"
+classes: wide 
+categories:
+  - blog
+tags:
+  - R
+  - Plotly
 ---
 
 ## Squared Exponential Kernel
@@ -20,8 +29,8 @@ It also has only two parameters:
 
 ## Modified Squared Exponential Kernel
 
-
-We consider modified form of squared-exponential covariance kernel, defined as:
+We consider modified form of squared-exponential covariance kernel,
+defined as:
 
 $$  \kappa(x, x') = \exp\{-a(\|x\| + \|x'\|^2) - b \|x - x'\|^2\},\quad \text{for }a>0, \quad b> 0,$$
 
@@ -54,9 +63,11 @@ $d$-dimensional data.
 
 ## Fast Basis Function Expansion based on Eigen Decomposition
 
-In R, there's a nice package called BayesGPfit (Kang) that you can use to do the basis expansion for modified squared-exponential kernel.
+In R, there's a nice package called BayesGPfit (Kang) that you can use
+to do the basis expansion for modified squared-exponential kernel.
 
-Here's an example, consider using basis functions to approximate a modified squared exponential kernel with $a =0.01$ and $b = 1$:
+Here's an example, consider using basis functions to approximate a
+modified squared exponential kernel with $a =0.01$ and $b = 1$:
 ![](2022-09-30-squared_exponential_kernel_files/figure-markdown_strict/pressure-1.png)
 
 ## Reference
