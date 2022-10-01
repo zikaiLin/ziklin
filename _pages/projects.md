@@ -56,4 +56,3 @@ Maria A Kudela, Mario Dzemidzic, Brandon G Oberlin, **Zikai Lin,** Joaquín Goñ
 
 
 
-You can find more on my [Google Scholar profile page](https://scholar.google.com/citations?hl=en&user=ZjPDfTcAAAAJ).
