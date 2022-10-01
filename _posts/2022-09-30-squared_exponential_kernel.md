@@ -46,12 +46,12 @@ $$
 k(\mathbf{x},\mathbf{x}') = \sum_{i=1}^\infty\lambda_i\phi_{i}(\mathbf{x})\phi_{i}'(\mathbf{x}'),
 $$
 
+
+
 $$
 k(x,x^{'})=\sigma^2\sum^{\infty}_{l=1}\lambda_l\Psi_l(x)\Psi_l(x^{'}) ,
 $$
-
-where $\{\lambda_l\}^{\infty}_{l=1}$ are eigen values with$\lambda_l\geq\lambda_{l+1}>0$ for $l\geq1$ and
-$\{\phi_l(x)\}^{\infty}_{l=1}$ are orthonormal eigen functions that satisfy the following properties: $\int\Psi_l(x)\Psi_l(x^{'})dx=1$ when $l=l^{'}$ and $\int\Psi_l(x)\Psi_l(x^{'})dx=0$ otherwise. The GP
+where $\{\lambda_l\}^{\infty}_{l=1}$ are eigen values with$$\lambda_l\geq\lambda_{l+1}>0$$ for $$l\geq1$$ and $$\{\phi_l(x)\}^{\infty}_{l=1}$$ are orthonormal eigen functions that satisfy the following properties: $\int\Psi_l(x)\Psi_l(x^{'})dx=1$ when $l=l^{'}$ and $\int\Psi_l(x)\Psi_l(x^{'})dx=0$ otherwise. The GP
 $f_j(\cdot)$ can then be represented as _
 $$
 f(x)=\sum^{\infty}_{l=1}\theta_lb_l(x), \quad \theta_l \overset{i.i.d}{\sim} \mathcal{N}(0,\sigma_l^2), \quad \text{for }l = 1,\ldots, \infty
