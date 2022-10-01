@@ -34,7 +34,9 @@ defined as:
 $$
 \kappa(x, x') = \exp\{-a(\|x\| + \|x'\|^2) - b \|x - x'\|^2\},\quad \text{for }a>0, \quad b> 0,
 $$
-where $\|\cdot\|$ is the  $L_2$-norm. Notice that $\kappa(x, x')$ reduces to standard SE kernel when $a = 0$. Here $a$ is the decay parameter  controls the decay rate of $\mathrm{Var}\{f_j(\cdot)\}$ compared to $\mathrm{Var}\{f_j(0)\}$. The parameter $b$ is the smoothing parameter of modified SE kernel, smaller value of $b$ corresponds to a smoother GP $f_j(\cdot)$. An important property of modified SE kernel is that it has a closed form eigen decomposition using Hermite polynomials. A $k$-th order normalized Hermite polynomials is defined as follow: 
+where $\|\cdot\|$ is the  $L_2$-norm. Notice that $\kappa(x, x')$ reduces to standard SE kernel when $a = 0$. Here $a$ is the decay parameter  controls the decay rate of $\mathrm{Var}$
+
+$\mathrm{Var}\{f_j(\cdot)\}$compared to $\mathrm{Var}\{f_j(0)\}$. The parameter $b$ is the smoothing parameter of modified SE kernel, smaller value of $b$ corresponds to a smoother GP $f_j(\cdot)$. An important property of modified SE kernel is that it has a closed form eigen decomposition using Hermite polynomials. A $k$-th order normalized Hermite polynomials is defined as follow: 
 $$
 H_k(x) = (2^k k!\sqrt{x})^{1/2}(-1)^k\exp (x^2)\dfrac{d^k}{dx^k}\exp(-x^2),
 $$
