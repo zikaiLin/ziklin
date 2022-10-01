@@ -65,7 +65,7 @@ polynomial degrees, says $h$, i.e. $L = \binom{h+d}{d}$ for $d$-dimensional data
 In R, there's a nice package called BayesGPfit (Kang) that you can use to do the basis expansion for modified squared-exponential kernel.
 
 Here's an example, consider using basis functions to approximate a modified squared exponential kernel with $a =0.01$ and $b = 1$:
-![](2022-09-30-squared_exponential_kernel_files/figure-markdown_strict/pressure-1.png)
+![pressure-1](/Volumes/easystore/Dropbox (Personal)/GithubPage/ziklin/images/pressure-1.png)
 
 ## Reference
 
