@@ -36,12 +36,11 @@ $$
 $$
 where $\|\cdot\|$ is the  $L_2$-norm. Notice that \(\kappa(x, x')\) reduces to standard SE kernel when $a = 0$. Here $a$ is the decay parameter  controls the decay rate of $\mathrm{Var}$
 
-\(\mathrm{Var}\{f_j(\cdot)\}\) compared to \(\mathrm{Var}\{f_j(0)\}\). The parameter $b$ is the smoothing parameter of modified SE kernel, smaller value of \(b\) corresponds to a smoother GP \(f_j(\cdot)\). An important property of modified SE kernel is that it has a closed form eigen decomposition using Hermite polynomials. A \(k\)-th order normalized Hermite polynomials is defined as follow: 
+\(\mathrm{Var}\{f_j(\cdot)\}\) compared to \(\mathrm{Var}\{f_j(0)\}\). The parameter $b$ is the smoothing parameter of modified SE kernel, smaller value of \(b\) corresponds to a smoother GP \(f_j(\cdot)\). An important property of modified SE kernel is that it has a closed form eigen decomposition using Hermite polynomials. A $$k$$-th order normalized Hermite polynomials is defined as follow: 
 $$
 H_k(x) = (2^k k!\sqrt{x})^{1/2}(-1)^k\exp (x^2)\dfrac{d^k}{dx^k}\exp(-x^2),
 $$
-Mercer's Theorem states that a positive-definite kernel $k(\mathbf{x},\mathbf{x}')$ in a finite measure
-space can be decomposed as 
+Mercer's Theorem states that a positive-definite kernel $$k(\mathbf{x},\mathbf{x}')$$ in a finite measure space can be decomposed as 
 $$
 k(\mathbf{x},\mathbf{x}') = \sum_{i=1}^\infty\lambda_i\phi_{i}(\mathbf{x})\phi_{i}'(\mathbf{x}'),
 $$
@@ -51,7 +50,7 @@ $$
 $$
 k(x,x^{'})=\sigma^2\sum^{\infty}_{l=1}\lambda_l\Psi_l(x)\Psi_l(x^{'}) ,
 $$
-where $\{\lambda_l\}^{\infty}_{l=1}$ are eigen values with$$\lambda_l\geq\lambda_{l+1}>0$$ for $$l\geq1$$ and $$\{\phi_l(x)\}^{\infty}_{l=1}$$ are orthonormal eigen functions that satisfy the following properties: $\int\Psi_l(x)\Psi_l(x^{'})dx=1$ when $l=l^{'}$ and $\int\Psi_l(x)\Psi_l(x^{'})dx=0$ otherwise. The GP
+where $$\{\lambda_l\}^{\infty}_{l=1}$$ are eigen values with $$\lambda_l\geq\lambda_{l+1}>0$$ for $$l\geq1$$ and $$\{\phi_l(x)\}^{\infty}_{l=1}$$ are orthonormal eigen functions that satisfy the following properties: $\int\Psi_l(x)\Psi_l(x^{'})dx=1$ when $l=l^{'}$ and $\int\Psi_l(x)\Psi_l(x^{'})dx=0$ otherwise. The GP
 $f_j(\cdot)$ can then be represented as _
 $$
 f(x)=\sum^{\infty}_{l=1}\theta_lb_l(x), \quad \theta_l \overset{i.i.d}{\sim} \mathcal{N}(0,\sigma_l^2), \quad \text{for }l = 1,\ldots, \infty
