@@ -64,7 +64,7 @@ k(x,x^{'})=\sigma^2\sum^{\infty}_{l=1}\lambda_l\Psi_l(x)\Psi_l(x^{'}) ,
 $$
 
 
-where $$\{\lambda_l\}^{\infty}_{l=1}$$ are eigen values with $$\lambda_l\geq\lambda_{l+1}>0$$ for $$l\geq1$$ and $$\{\phi_l(x)\}^{\infty}_{l=1}$$ are orthonormal eigen functions that satisfy the following properties: $$\int\Psi_l(x)\Psi_l(x^{'})dx=1$$ when $$l=l^{'}$$ and $\int\Psi_l(x)\Psi_l(x^{'})dx=0$ otherwise. The GP $$f_j(\cdot)$$ can then be represented as 
+where $$\{\lambda_l\}^{\infty}_{l=1}$$ are eigen values with $$\lambda_l\geq\lambda_{l+1}>0$$ for $$l\geq1$$ and $$\{\phi_l(x)\}^{\infty}_{l=1}$$ are orthonormal eigen functions that satisfy the following properties: $$\int\Psi_l(x)\Psi_l(x^{'})dx=1$$ when $$l=l^{'}$$ and $$\int\Psi_l(x)\Psi_l(x^{'})dx=0$$ otherwise. The GP $$f_j(\cdot)$$ can then be represented as 
 
 
 $$
@@ -77,11 +77,17 @@ polynomial degrees, says $h$, i.e. $$L = \binom{h+d}{d}$$ for $$d$$-dimensional 
 
 ## Fast Basis Function Expansion based on Eigen Decomposition
 
-In R, there's a nice package called BayesGPfit (Kang) that you can use to do the basis expansion for modified squared-exponential kernel.
+
+
+In R, there's a nice package called BayesGPfit (Kang)  that you can use to do the basis expansion for modified squared-exponential kernel.
 
 Here's an example, consider using basis functions to approximate a modified squared exponential kernel with $$a =0.01$$ and $$b = 1$$:
 
-![pressure-1](/Volumes/easystore/Dropbox (Personal)/GithubPage/ziklin/images/pressure-1.png)
+
+
+![fastGPEigen](/Volumes/easystore/Dropbox (Personal)/GithubPage/ziklin/assets/fastGPEigen.png)
+
+
 
 ## Reference
 
