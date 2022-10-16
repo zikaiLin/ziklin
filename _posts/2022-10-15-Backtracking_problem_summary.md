@@ -73,6 +73,8 @@ Remember that for backtracking problem, we always want to identify the sub-probl
 
 ## 39 Combination Sum
 
+
+
 #### Problem description
 
 https://leetcode.com/problems/combination-sum/
@@ -120,15 +122,15 @@ Does brutal force works here? Probably no, because each number can be picked out
 
 
 
-So here what is the decision tree?
+*So here what is the decision tree?*
 
 - For each node (each number in the array), expand the whole possible choices as the children.
 
 
 
-At each level of the decision tree, how do we determine that if we can move forward or keep searching?
+*(Stoppign rule) At each level of the decision tree, how do we determine that if we can move forward or keep searching?*
 
-- If the path sum is greater than the target, we don't have to keep searching because all the values in the array are **positive**
+- If the path sum is **greater or equal** than the target, we don't have to keep searching because all the values in the array are **positive**
 
 
 
@@ -163,7 +165,105 @@ class Solution:
         return res
 ```
 
+ 
 
-​            
-​            
-​        
+
+
+## 77. Combinations
+
+
+
+
+
+
+
+## 46. Permutations
+
+Given an array `nums` of distinct integers, return *all the possible permutations*. You can return the answer in **any order**.
+
+ 
+
+**Example 1:**
+
+```
+Input: nums = [1,2,3]
+Output: [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
+```
+
+**Example 2:**
+
+```
+Input: nums = [0,1]
+Output: [[0,1],[1,0]]
+```
+
+**Example 3:**
+
+```
+Input: nums = [1]
+Output: [[1]]
+```
+
+ 
+
+**Constraints:**
+
+- `1 <= nums.length <= 6`
+- `-10 <= nums[i] <= 10`
+- All the integers of `nums` are **unique**.
+
+
+
+#### Breakdown
+
+*How many possible results exists for permutation?*
+
+- $$\mathrm{Permute}(n) = n!$$
+
+
+
+*What does the decision tree look like? (suppose we are using the example)* 
+
+1. We pop one number out of `[1,2,3]`:
+   -  `[1,2,3]`  -> `[2,3] + [1]` 
+     -  `[2,3]`  -> `[3] + [2]` 
+     -  `[2,3]`  -> `[2] + [3]` 
+   - `[1,2,3]`  -> `[1,3] + [2]` 
+     -  `[1,3]`  -> `[1] + [3]` 
+     -  `[1,3]`  -> `[3] + [1]` 
+   - `[1,2,3]`  -> `[1,2] + [3]` 
+     -  `[1,2]`  -> `[1] + [2]` 
+     -  `[1，2]`  -> `[2] + [1]` 
+2. The backtracking problem can therefore be described as:
+   - Each time, we pop one number out (from 1 to n)
+   - Run a DFS and sub-divide the array into all possible orders
+   - After the DFS, we append the number we popped out to it
+
+
+
+#### Solution:
+
+Credit to *Neetcode.io* 
+
+```python
+class Solution:
+    def permute(self, nums: List[int]) -> List[List[int]]:
+        result = []
+        
+        if (len(nums) == 1):
+            return [nums.copy()]
+        
+        for i in range(len(nums)):
+            n = nums.pop(0)
+            perms = self.permute(nums)
+            
+            for perm in perms:
+                perm.append(n)
+            result.extend(perms)
+            nums.append(n)
+                
+        
+        return result
+            
+```
+
