@@ -32,7 +32,7 @@ For each subset, we have every single element whether to include or not. And the
 
 
 
-![image-20221015211920191](ziklin/assets/78subset.png)
+![image-20221015211920191](/ziklin/assets/78subset.png)
 
 *credit to Neetcode.io*
 
