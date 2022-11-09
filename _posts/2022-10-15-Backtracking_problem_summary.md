@@ -16,7 +16,7 @@ tags:
 
 ---
 
-[TOC]
+
 
 
 
@@ -272,14 +272,14 @@ After being sorted: candidates = [1,1,2,5,6,7,10]
 
 - Include 1 vs not include 1:
   - Include 1 -> create a subproblem where arr =  [1,1,2,5,6,7,10], target = 8-1 = 7
-  - Not include 1 -> Then we have to **make sure that the **
+  - Not include 1 -> Then we have to **make sure that the following subtree does not include 1**!
 
-
+T
 
 #### Code
 
 
-        
+​        
 ```python
 class Solution:
     def combinationSum2(self, candidates: List[int], target: int) -> List[List[int]]:
